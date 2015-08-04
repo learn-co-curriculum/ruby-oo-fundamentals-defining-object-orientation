@@ -295,7 +295,7 @@ Object Orientation is big topic. This was meant to be an introduction to some of
 |----------------|-----|
 |class    | a collection of code that acts as a template for created individual Ruby objects with shared attributes and behaviors|
 | instance    | an object created by a class|
-|instance method | a method that contains information about an instance of a class or describes behavior of a an instance of a class. can be called on instances of a class|
+|instance method | a method that contains information about an instance of a class or describes behavior of an instance of a class. can be called on instances of a class|
 |instance variable| a variable that is available to all instance methods on a particular object/instance of a class.
 | class method| a method called on a class itself, *not* on instances of a class|
 |class variable| a variable available to instance methods and class methods. used to store information about the class as a whole. 
