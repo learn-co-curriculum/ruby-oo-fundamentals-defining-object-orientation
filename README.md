@@ -4,7 +4,7 @@
 
 1. Introduce the concept of Object Oriented Programming (OOP)
 2. Understand the definition of a class and an instance in OOP
-3. Understand the that methods enable objects to have attributes and behaviors.
+3. Understand that methods enable objects to have attributes and behaviors.
 4. Learn how to define a class and initialize instances of that class
 5. Learn about instance methods vs. class methods
 
@@ -94,6 +94,10 @@ class Person
   def say_hello
     "Hello!"
   end
+
+  def introduction
+    "Hey there, my name is #{@name}."
+  end
   
   def argue
     "I'm right and you're wrong!"
@@ -102,7 +106,7 @@ class Person
 end
 ```
 
-Here, we have a Person class, defined by the `class Person`, `...some code...`, `end` syntax. The class contains an initialize method, which allows us to make Person instances that contain certain attributes upon creation (more on that later), and various methods, as previously discussed, that confer attributes and behaviors upon each instance of the Person class. 
+Here, we have a `Person` class, defined by the `class Person`, `...some code...`, `end` syntax. The class contains an initialize method, which allows us to make Person instances that contain certain attributes upon creation (more on that later), and various methods, as previously discussed, that confer attributes and behaviors upon each instance of the Person class. 
 
 Let's take a look at an instance of Person right now: 
 
@@ -116,16 +120,18 @@ sophie.say_hello
 => "Hello!"
 ```
 
-We created a new person via the `Person.new` syntax and saved it (her) to a variable, `sophie`. We were then able to call any of our Personal instance methods on `sophie`. Again, don't worry too much for now about that `initialize` method or the `Person.new` code, there'll be more on that later. 
+We created a new person via the `Person.new` syntax and saved it (her) to a variable, `sophie`. We were then able to call any of our `Person` instance methods on `sophie`. Again, don't worry too much for now about that `initialize` method or the `Person.new` code, there'll be more on that later. 
 
 
 ## Instance Variables and Methods
 
-The methods defined in the above example inside our Person class are called **instance methods** because we call them on individual instances of our Person class. You may have noticed that the `name` variable was prefaced with an `@` symbol and used in not one, but *two* methods––the `initialize` method and the `name` method. That variable is called an **instance variable**. 
+The methods defined in the above example inside our Person class are called **instance methods** because we call them on individual instances of our Person class. 
+
+Take another look at the `Person` class, as defined above. You may have noticed that the `name` variable was prefaced with an `@`symbol and used in not one, but *three* methods––the `initialize` method, the `name` method and the `introduction` method. That variable is called an **instance variable**. 
 
 **Instance Methods** are methods designed to be called on instances of a class. 
 
-**Instance Variables** are bound to an instance of a class. That means that the value held by an instance variable is specific to whatever instance of the class it happens to belong to. Instance variables hold information about an instance, usually an attribute of that instance, and can be called on throughout the class, **without needing to be passed into other methods as arguments**. For example, once we set the value of `@name` equal to whatever string is passed in as an argument to our `initialize` method, we could call that same `@name` variable in our `name` method. 
+**Instance Variables** are bound to an instance of a class. That means that the value held by an instance variable is specific to whatever instance of the class it happens to belong to. Instance variables hold information about an instance, usually an attribute of that instance, and can be called on throughout the class, **without needing to be passed into other methods as arguments**. For example, once we set the value of `@name` equal to whatever string is passed in as an argument to our `initialize`method, we could call that same `@name` variable in our `introduction` method. 
 
 Let's take a closer look:
 
@@ -135,18 +141,19 @@ class Person
     @name = name
   end
   
-  def name
-    @name
+  def introduction
+    "Hey there, my name is #{@name}."
   end
+  
 end
 ```
 
-Our `initialize` method, which takes in an argument of name and is immediately invoked when we types `Person.new`, sets an instance variable, `@name` equal to a name. Our `.name` instance method will return the `@name` variable, which is equal to a name! Check it out:
+Our `initialize` method, which takes in an argument of name and is immediately invoked when we types `Person.new`, sets an instance variable, `@name` equal to a name. Our `.introduction` instance method will return the string, `"Hey there, my name is #{@name}"`. This string interpolation will work, because our `introduction` instance method has access to our `@name` instance variable, which is equal to a name! Check it out:
 
 ```ruby
 sophie = Person.new("Sophie")
-sophie.name
-=> "Sophie"
+sophie.introduction
+=> "Hey there, my name is Sophie."
 ```
 
 Now that we understand the concept of instance variables and methods, we'll take a closer look at that `initialize` method. 
@@ -169,17 +176,17 @@ end
 
 our `initialize` method takes in an argument of a name and sets an **instance variable** equal to the name that is passed into the method call. 
 
-The `initialize` method is what's called a **callback** method, because it is automatically invoked every time the `.new` method is used to create a new instance of the class. 
+The `initialize` method is what's called a **callback** method, because it is automatically invoked every time the `.new` method is used to create a new instance of the class. You can also think of the `initialize` method as a **constructor** method. A contructor method is invoked upon the creation of an instance of a class and used to help define the instance of that class. 
 
 So, because of how we defined our `initialize` method, every time you type `Person.new("Some name")`, a new person instance is created that has a name of `"Some name"` (i.e. whatever string you give the `.new` method). 
 
-You may notice that instance methods, being method available to every *instance* of a class, are called on individual instances of a class. Just like the `.name` instance method is called on the variable `sophie` that we pointed to an instance of Person via this line: 
+You may notice that instance methods, methods available to every *instance* of a class, are called on individual instances of a class. Just like the `.introduction` instance method is called on the variable `sophie` that we pointed to an instance of Person via this line: 
 
 ```ruby
 sophie = Person.new("Sophie")
 ``` 
 
-On the other hand, `.new` is called on the Person class itself. This is called a class method and we'll discuss it in further in the next section. 
+On the other hand, `.new` is called on the Person class itself. This is called a class method and we'll discuss it further in the next section. 
 
 
 ## Class Variables and Methods
@@ -188,11 +195,39 @@ If an instance method is a method called on each individual instance of a class,
 
 ### Building a Class Method
 
-When we need to define an attribute of an individual person or some behavior that an individual person should be able to enact, we create an instance method. However, what if we want to keep track of *all* of our instances of person? It isn't really the responsibility of an *individual* person to look around itself and count up each and every other person instance that has been created. Instead, we can think of such a task as being the responsibility of the class as a whole. So, let's make a class method, `.all`, that will keep track of all of our people. 
+When we need to define an attribute of an individual person or some behavior that an individual person should be able to enact, we create an instance method. However, what if we want a method that contains information about the class as a whole, rather than information pertaining to individual instances of that class? For example, individual people all belong to the species "Homo Sapiens". This "species" attribute is an attribute of *all instances of the `Person` class*. So, because it describes the class as a whole, we should make a `.species` class method that we can call on the `Person` class. Let's do it!
+
+#### Building the `.species` Method
+
+To define a class method, we preface the method name with `self.`. Let's take a look:
+
+```ruby
+class Person
+
+  def self.species
+    "Homo Sapiens"
+  end
+
+end
+```
+
+That's it! Let's call our method to better understand how it works: 
+
+```ruby
+Person.species
+ => "Homo Sapiens"
+```
+
+Ta da! Our first class method is born. Let's take a look at a more advanced example.
+
+
+#### Advanced Class Method Example: Tracking Instances of a Class
+
+However, what if we want to keep track of *all* of our instances of person? It isn't really the responsibility of an *individual* person to look around itself and count up each and every other person instance that has been created. Instead, we can think of such a task as being the responsibility of the class as a whole. So, let's make a class method, `.all`, that will keep track of all of our people. 
 
 ### Defining the Method
 
-To define a class method, we preface the method name with `self.`. Let's take a look: 
+Once again, to define a class method, we preface the method name with `self.`. Let's take a look: 
 
 ```ruby
 class Person
@@ -300,7 +335,3 @@ Object Orientation is big topic. This was meant to be an introduction to some of
 | class method| a method called on a class itself, *not* on instances of a class|
 |class variable| a variable available to instance methods and class methods. used to store information about the class as a whole. 
 |initialize method| a type of instance method that gets automatically called on an instance of a class immediately after it is created via the `.new` class method|
-
-
-
-
