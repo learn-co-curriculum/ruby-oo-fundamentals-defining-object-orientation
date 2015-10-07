@@ -3,10 +3,6 @@
 ## Objectives
 
 1. Introduce the concept of Object Oriented Programming (OOP)
-2. Understand the definition of a class and an instance in OOP
-3. Understand that methods enable objects to have attributes and behaviors.
-4. Learn how to define a class and initialize instances of that class
-5. Learn about instance methods vs. class methods
 
 ## Object-Oriented Programming (OOP)
 
