@@ -31,4 +31,4 @@ With this trend towards digital life really reflecting our real lives, object-or
 
 Ruby comes with a few types of Objects to get us started, things like `Integer`, `String`, `Array`, etc. We call these base types of Objects "Primitives". But what if we wanted to add a new kind of thing to our programming universe, a new kind of object we can create in our code? That's what the `class` keyword and object orientation allows us to do.
 
-<a href='https://learn.co/lessons/ruby-intro-to-oo' data-visibility='hidden'>View this lesson on Learn.co</a>
+<p data-visibility='hidden'>View <a href='https://learn.co/lessons/ruby-intro-to-oo' title='Object Orientation'>Object Orientation</a> on Learn.co and start learning to code for free.</p>
