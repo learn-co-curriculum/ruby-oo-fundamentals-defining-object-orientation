@@ -31,4 +31,8 @@ Object-oriented programming was born from the trend of making digital lives refl
 
 Ruby comes with a few types of Objects to get us started, things like `Integer`, `String`, `Array`, etc. We call these base types of Objects "Primitives." But what if we wanted to create a new type in our programming universe, a new kind of object for our code? That's what the `class` keyword and object orientation allows us to do.
 
+## Resources
+
+[Video Review- Intro to Object Orientation](https://github.com/learn-co-curriculum/oo-ruby-video-object-orientation-overview) 
+
 <p data-visibility='hidden'>View <a href='https://learn.co/lessons/ruby-intro-to-oo' title='Object Orientation'>Object Orientation</a> on Learn.co and start learning to code for free.</p>
