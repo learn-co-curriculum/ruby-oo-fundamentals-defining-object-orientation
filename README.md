@@ -1,8 +1,8 @@
 # Object Orientation
 
-## Objectives
+## Overview
 
-1. Introduce the concept of Object Oriented Programming (OOP)
+We'll introduce the concept of Object Oriented Programming (OOP)
 
 ## Object-Oriented Programming (OOP)
 
@@ -33,6 +33,6 @@ Ruby comes with a few types of Objects to get us started, things like `Integer`,
 
 ## Resources
 
-[Video Review- Intro to Object Orientation](https://github.com/learn-co-curriculum/oo-ruby-video-object-orientation-overview) 
+[Video Review- Intro to Object Orientation](https://www.youtube.com/watch?v=Z_IoQCVNWtM) 
 
 <p data-visibility='hidden'>View <a href='https://learn.co/lessons/ruby-intro-to-oo' title='Object Orientation'>Object Orientation</a> on Learn.co and start learning to code for free.</p>
