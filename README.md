@@ -30,9 +30,3 @@ An object in code is a thing with all the data and all the logic required to com
 Object-oriented programming was born from the trend of making digital lives reflect our real lives. In the 1970's, [Adele Goldberg](https://en.wikipedia.org/wiki/Adele_Goldberg_%28computer_scientist%29) and [Alan Kay](https://en.wikipedia.org/wiki/Alan_Kay) developed an object-oriented language at Xerox PARC called SmallTalk, which was used in the first personal computer.
 
 Ruby comes with a few types of Objects to get us started, things like `Integer`, `String`, `Array`, etc. We call these base types of Objects "Primitives." But what if we wanted to create a new type in our programming universe, a new kind of object for our code? That's what the `class` keyword and object orientation allows us to do.
-
-## Resources
-
-[Video Review- Intro to Object Orientation](https://www.youtube.com/watch?v=Z_IoQCVNWtM) 
-
-<p data-visibility='hidden'>View <a href='https://learn.co/lessons/ruby-intro-to-oo' title='Object Orientation'>Object Orientation</a> on Learn.co and start learning to code for free.</p>
