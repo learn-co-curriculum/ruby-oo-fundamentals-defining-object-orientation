@@ -1,8 +1,8 @@
-# Object Orientation
+# Defining Object Orientation
 
 ## Overview
 
-We'll introduce the concept of Object Oriented Programming (OOP)
+We'll introduce the concept of Object-Oriented Programming (OOP)
 
 ## Object-Oriented Programming (OOP)
 
